@@ -1,0 +1,454 @@
+anchor tag is used to navigate pages in the same page or diff
+
+
+href--> hyper reference
+internal navigation is used by id or names using in href
+target-> target of navigation 
+---> _blank : new tab
+---> _self : current tab : opens frame inside the same frame
+---> _parent : current tab : opens the frame in parent frame 
+---> _top : current tab: opens frame in outer most frame 
+
+iframe---> dedicated frame for other web page 
+<iframe src="url"></iframe>
+
+id-->(universal attribute) used to uniquely identify attribute in the front end
+name--> used to uniquely identify attribute in the back end
+value --> used as value that is used to store in db 
+input type--> text,number,,email,radio,checkbox,password
+input type --> list --just like a drop down where we can include our own option
+label for=name-- labels the input feild
+
+disabled attribute-> disbales text area
+read only--> read only attribute in input 
+required--> mandatory feild area
+
+radio button 
+name should be same
+
+
+
+drop down menu
+select option
+--> selected --- displays default option 
+
+text area --> multiline text area
+att-> rows,col
+ 
+field set--> isolated forms 
+legend tag--> caption or heading of the field set 
+
+
+-----------------------------------------------------------
+
+CSS
+cascading style sheets 
+used to style the web page 
+|->inline css <h1 style="color: red">
+|->internal css--selectors are needed -- name,id,class,grouping(hi,#id,.class{style}),universal selector-*(style-applies to every tag)
+|->external css : link rel="stylesheet" href="./name"
+
+
+box model: web page understands the type of element
+
+units : absolute , relative
+absolute : pixel,inch,pic,mm fixed
+relative : dynamic unit which is related to something else
+rem, em 
+rem: 1 rem= font size of root element 
+em : 1em=font size of current element
+default 2em
+view port : space given to web page
+vh : view height: height of web page
+1vh=1% of vh ex: height:50vh = 50%vh
+
+vw : view width: width of web page 
+1vw=1% of vw ex: width:50vw = 50%vw
+
+
+flex box : layout of various fields
+ display : flex           
+aligns the children elements in a single row
+never creates the second row
+all children all arranged in the single row 
+
+in main flex box <--------------> main axis acc to direction of elements 
+display:flex
+cross axis alternate axis to elements 
+depends on flex-direction(row, column)
+flex-direction
+justify-center 
+align-items aligns items relative to cross axis wrt individual rows not wrt content (start, center, end)
+align-content aligns items relative to cross axis wrt whole container (start, center, end)
+Justify-content- is to align the children along main axis
+flex-wrap: avoids the over flow of the children 
+align-content is given higher priority than align text in flex wrap
+align content is depended on flex-wrap
+
+every flex item has order 1(priority)
+--style"order=5;" order of children 
+
+
+responsive design
+meta tag is imp (for every screen)
+
+@media(min/max-width:pixels)
+{
+selector{}
+}
+range
+@media(min-width:pixels) and (max-width:pixels)
+{
+selector{}
+}
+
+
+
+Java Script
+
+makes web pages dynamic
+
+-single threaded synchronous interpreted programming      language
+-language of browser(executed only on browser)
+-JS Is executed on node js
+-java script engine supports the execution of js
+ 
+
+
+
+var -> variable
+let
+const
+
+console.log()-> print statement
+if(){}
+else if(){}
+else{}
+ternary operator
+(condition ? true:fasle)
+
+loops
+
+while(condition)
+{
+ i++;
+}
+
+for()
+{}
+
+do{}while()
+--------------------------------
+function Solve(val) {
+    var v = document.getElementById('result');
+    
+    v.value += val;
+ }
+ function Result() {
+    var a = document.getElementById('result').value;
+    var b = eval(a);
+    document.getElementById('result').value = b;
+ }
+ function Reset() {
+    var res = document.getElementById('result');
+    res.value = '';
+ }
+ function Delete() {
+    var del = document.getElementById('result');
+    del.value = del.value.slice(0,-1);
+ }
+------------------------------------
+
+var-->redeclare, reupdate
+let-->no redeclaration, reupdate
+const--> no redeclaration, no reupdate
+
+data types
+-primitive: deals with value
+1. number
+2. string
+3. Boolean
+4. undefined (var, let, const)
+5. null(object)
+6. long int
+
+typeof()--gives the data type
+
+-non primitive: deals with address or reference
+1. arrays
+2. objects
+3. functions
+4. regular expressions
+
+== -> 10=="10" compares the value :true
+=== -> 10==="10" compares the data type :false
+
+--------------------------------------------------
+function a()
+{return "hi"}
+
+
+var b=function()----function expression storing func in var
+{console.log("hello")}
+
+call back function : when we pass function as an argument in another function 
+
+ex: function g(x,y)
+{
+	b(); (above function)
+	console.log(y)
+}
+-------------------------------------------
+
+imperative paradigm: instructions should be given properly
+(what to do, how to do)
+
+declarative paradigm: 
+(what to do)
+
+Arrays : collection of data 
+contiguous memory storage
+arr.push()-> add n no. of elements at end
+arr.pop()-> removes the last element
+
+Slicing - used to create the sub array
+slice()
+arr.slice(start,last-1)
+
+
+splice-> delete the elements in array and returns deleted elements. It effects the original array
+splice[index, number of elements,adding elemets]
+performs insertion and delete
+
+var a=[1,2,3,4,5]
+       0 1 2 3 4	  	
+var b=a.splice[1,2]
+a=[1,4,5] b=[2,3]
+a.splice[2,0,"a"]--> performs only insertion
+o/p : [1,2,"a",3,4,5]
+
+-------------------------
+for(let i of array)-- declarative for of loop
+i-->element nor index
+
+map--> looping function & implemented by call back function,it will never decrease the length of array ,returns same length (true or false)
+var a = [1,2,3,4]
+var b=a.map(function(item,index)
+{ return item*item
+})
+console.log(b)
+o/p [1,4,9,16]
+
+
+filter : it filter the array based on the given condition.
+
+var a = [1,2,3,4]
+var b=a.filter(function(item,index)
+{ return item>2
+})
+console.log(b)
+o/p [3,4]
+
+sort : sorts the array by one digit only.
+arr.sort()
+
+to sort the array properly
+
+sort takes call back function
+var arr = [1,6,82,3,4]
+aee.sort(function(a,b)-- where a & b are adjacent elements in array
+{ return a-b or b-a;
+})
+console.log(arr)
+
+logic
+if a-b<0 -- no swap
+a-b>0 swap
+a-b=0 
+
+reduce
+to reduce array to a single element
+var a = [1,2,3,4]
+var sum=a.reduce(function(total,item,index)
+{ return total+item or return total*item
+},0--second arguement-- initial value of total)
+console.log(sum)
+
+
+object is a data structure which store data in the format of key value pair
+ex let obj={name:"abc",age:5}
+console.log(obj.name)-- abc
+updation--- obj.name="bcd"
+
+
+DOM--Document Object Model
+for javascript every thing is an object 
+even a html file is an object 
+
+<script>
+document.write("hi")
+</script>
+
+methods
+var r=document.getElementById("id")
+r.innerText="hi"---changes the content 
+
+event -- operation performed by a user
+<tag onclick="function()"></tag>
+
+element.innerText       				 	 
+Modifies only text          					
+ex- element.innerHTML= "<i>hi</i>" ---prints as it is 			   	  
+
+element.innerHTML
+Modifies the tags 
+ex- element.innerHTML= "<i>hi</i> changes hi to italic font
+
+
+document.getElement/ElementsByClassName-- returns array
+
+<h1 class="h">hello</h1>
+<h1 class="h">hello</h1>--- changes to hi
+<h1 class="h">hello</h1>
+<h1 class="h">hello</h1> 
+<script>
+var ele=document.getElementsByClassName("h")
+---here ele is an array
+if we want to change the content in any of the above tags
+ele[1].innerText="hi" 
+ele[2].style.backgroundColor="red"
+
+
+
+document.getElementsByTagName("p")[0].style.display="none"--to hide
+
+document.getElementsByTagName("p")[0].style.display="block"--to show
+
+document.querySelector(.classname/#idname/tagname)---selects any selector---always returns the only first element of array
+
+document.querySelectorAll()---returns all the elements in array
+
+
+
+var ele=document.getElementById("idname)
+var a=document.createElement("tagname"); -- adds elements in html doc
+a.innetHTML="content"
+ele.appendChild(a)
+
+
+
+closures 
+when the inner function does not have variable declared
+if it accesses the variable of parent function then it makes closure with parent function(lexical scope)
+
+ex-
+function sum()
+ {
+	var b=10;
+	function sum1()
+	{
+		console.log(b)
+	}
+} 
+then it's called sum1 closure of sum
+
+if b is declared in global closure can not be created 
+var b=10;
+function sum()
+ {
+	
+	function sum1()
+	{
+		console.log(b)
+	}
+} 
+
+
+hoisting : when ever we access variables or functions before their declaration is called hoisting
+
+
+prototyping
+This prototype object allows attaching methods and properties, facilitating inheritance for all objects created from the function.
+
+
+class---
+                             
+class Capitalletter{
+
+	name
+	constructor(n)
+	{
+		this,name=n;
+	}
+}
+const p=new Capitalletter('abc');
+console.log(p.name)
+hoisting is not possible wrt classes
+
+
+inheritance
+ class Main extends Capitalletter
+{
+	constructor(n)
+	super(n)
+}
+const t=new Main('hi')
+console.log(t)
+-----------------------------------------------------------
+Jquery
+it's a library which makes java script simple fast
+$('selector').css('property',value),$('selector').click(function_name) etc
+
+----------------------------------------------
+
+Constructors
+
+this refers to a object it belongs to
+ this is always used with new keyword
+when there is value assigned with this then it returns window object(with use of new)
+
+when we create an object then it is called instance of constructor function
+
+
+---------------------------------------------
+pure java script is always Synchronous
+
+impure-> Asynchronous java script
+
+
+
+setTimeout(function,time of delay)-- performs only once
+setInterval(function,time)----timer function displays after same intervals of time
+
+-------------------------------------------------
+promises : structure with which we will be able to handle asynchronous tasks in a more efficient way 
+
+resolved or rejected or pending
+ var p= new Promise(callback function(resolve ,reject))
+if resolved
+promise.then(callbackfunction()).catch(()=>{})
+.catch-->if promise rejected
+
+ promise chaining --- more than one .then(), then it is calles promise chainigand they are asynchronous  
+
+
+jS+browser
+sync+async
+browser----powers:->(fetch()+timer()+localstorage+console)-->web API
+
+
+execution:
+call stack+web API+Call back queue+event loop
+
+if its async contents then the execution is
+call stack->web api->call back queue-> if call stack is empty then even loop passes to call stack
+------------------------------------------------------
+aync keyword
+when evr we put async keyword in front of a function the function becomes promise
+
+
+await keyword--blockig in nature
+
+await keyword is generally used with promise 
+it makes promise to sync
+

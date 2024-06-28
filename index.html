@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dangrek' rel='stylesheet'>
+</head>
+
+<body>
+    <!--                              SCORE BOARD                                  -->
+    <div id="scoring">
+        <p id="rock" class="text">ROCK</p>
+        <p id="paper" class="text">PAPER</p>
+        <p id="scissors" class="text">SCISSORS</p>
+        <div id="score_board">
+            <div class="box" id="computer_score">
+                <p id="computer" class="text2">COMPUTER</p>
+                <p id="score1" class="text2">SCORE</p>
+                <p id="computerdisplay">0</p>
+            </div>
+            <div class="box" id="your_score">
+                <p id="your" class="text2">YOUR</p>
+                <p id="score2" class="text2">SCORE</p>
+                <p id="userdisplay">0</p>
+            </div>
+        </div>
+    </div>
+
+    <!--                               GAME AREA                                    -->
+                                   
+        <p id="gamearea_youpicked">YOU PICKED</p>
+        <p id="gamearea_pcpicked">PC PICKED</p>
+        <div id="userwins" style="display:none;">
+            <p id="you_win">YOU WIN</p>
+            <p id="against_pc">AGAINST PC</p>
+            <button id="playagain1" type="submit"></button>
+            <p id="playagain1text">PLAY AGAIN</p>
+        </div>
+        <div id="pcwins" style="display:none;">
+            <p id="pc_win">YOU LOST</p>
+            <p id="against_pc">AGAINST PC</p>
+            <button id="playagain2" type="submit"></button>
+            <p id="playagain2text">PLAY AGAIN</p>
+        </div>
+        <div id="tie" style="display:none;">
+            <p id="tietext">TIE UP</p>
+            <button id="playagain3" type="submit"></button>
+            <p id="playagain3text">REPLAY</p>
+        </div>
+
+
+    <div id="gamearea">
+        <div id="gamearearock">
+            <img id="rockimage" src="rock.png" alt="rock image">
+            <div id="rock_circle">
+    
+            </div>
+        </div>
+
+        <div id="gameareascissors">
+            <img id="scissorsimage" src="scissors.png" alt="scissors image">
+            <div id="scissors_circle">
+    
+            </div>
+        </div>
+
+
+        <div id="gameareapaper">
+            <img id="paperimage" src="paper.png" alt="paper image">
+            <div id="paper_circle">
+    
+            </div>
+        </div>
+
+        <div id="linehead">
+            <div id="line1">
+
+            </div>
+            <div id="line2">
+
+            </div>
+            <div id="line3">
+
+            </div>
+        </div>
+    </div>
+
+    <!--                               RULES AREA                                   -->
+
+    <button id="rules" onclick="showbanner()">RULES</button>
+    <div id="container" style="display:none;">
+        <div id="banner">
+            <p id="bannerhead">Game Rules</p>
+            <ul type="square">
+                <li id="bannerli1">Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li id="bannerli2">Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just
+                    “rock, paper, scissors.”</li>
+                <li id="bannerli3">Use rock, paper, scissors to settle minor decisions or simply play to pass the time
+                </li>
+                <li id="bannerli4">If both players lay down the same hand, each player lays down another hand</li>
+            </ul>
+        </div>
+
+        <div id="redcircle">
+
+        </div>
+
+        <div>
+            <p id="crossmark">X</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
